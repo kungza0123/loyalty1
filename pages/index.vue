@@ -1,6 +1,6 @@
 <template>
   <v-sheet class="bg-deep-purple pa-12" rounded>
-    <v-card class="mx-auto px-6 py-8" max-width="344">
+    <v-card class="mx-auto px-6 py-8" >
       <v-container fluid fill-height>
             <v-layout align-center justify-center>
                <v-flex xs12 sm8 md4>

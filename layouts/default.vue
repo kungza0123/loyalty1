@@ -128,9 +128,9 @@ export default {
 </script>
 <style scoped>
 .v-application {
-  /* background-image: 'ITWEBAPP\ITWEBAPP\pic'; */
-  /* background-image:url('../pic/bgb.png');
- background-size: 100%; */
+  /* background-image: 'ITWEBAPP\ITWEBAPP\pic'; 
+   background-image:url('../pic/bgb.png');
+ background-size: 100%;  */
   
     
 }
