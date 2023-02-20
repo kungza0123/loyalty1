@@ -1,9 +1,10 @@
-<template>
-  <v-app dark>
-    <v-navigation-drawer
+<template >
+  <v-app >
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      
       fixed
       app
     >
@@ -19,7 +20,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -48,7 +49,7 @@
       >
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-toolbar-title v-text="title" />
       <v-spacer />
       <v-btn
         icon
@@ -56,7 +57,7 @@
       >
         <v-icon>mdi-menu</v-icon>
       </v-btn>
-    </v-app-bar>
+    </v-app-bar> -->
     <v-main>
       <v-container>
         <Nuxt />
@@ -79,18 +80,12 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    
   </v-app>
 </template>
 
 <script>
 export default {
-  name: 'DefaultLayout',
   data () {
     return {
       clipped: false,
@@ -106,13 +101,37 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
-        }
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Register',
+          to: '/register'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Login',
+          to: '/login'
+        },
+         {
+          icon: 'mdi-chart-bubble',
+          title: 'home',
+          to: 'home'
+        },
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Welcome to purchase system'
     }
   }
 }
 </script>
+<style scoped>
+.v-application {
+  /* background-image: 'ITWEBAPP\ITWEBAPP\pic'; */
+  /* background-image:url('../pic/bgb.png');
+ background-size: 100%; */
+  
+    
+}
+</style>

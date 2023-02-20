@@ -1,83 +1,76 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
-</template>
+  <v-sheet class="bg-deep-purple pa-12" rounded>
+    <v-card class="mx-auto px-6 py-8" max-width="344">
+      <v-container fluid fill-height>
+            <v-layout align-center justify-center>
+               <v-flex xs12 sm8 md4>
+      <v-form
+        v-model="form"
+        @submit.prevent="onSubmit"
+      >
+      <v-toolbar dark color="primary">
+      <v-toolbar-title>Login form</v-toolbar-title>
+    </v-toolbar>
+        <v-text-field
+          v-model="email"
+          :readonly="loading"
+          :rules="[required]"
+          class="mb-2"
+          clearable
+          label="Email"
+        ></v-text-field>
 
+        <v-text-field
+          v-model="password"
+          :readonly="loading"
+          :rules="[required]"
+          clearable
+          label="Password"
+          placeholder="Enter your password"
+        ></v-text-field>
+
+        <br>
+
+        <v-btn
+          :disabled="!form"
+          :loading="loading"
+          block
+          color="success"
+          size="large"
+          type="submit"
+          variant="elevated"
+        >
+          Sign In
+        </v-btn>
+        
+      </v-form>
+      </v-flex>
+      </v-layout>
+      </v-container>
+     
+    </v-card>
+  </v-sheet>
+</template>
 <script>
-export default {
-  name: 'IndexPage'
-}
+  export default {
+    data: () => ({
+      form: false,
+      email: null,
+      password: null,
+      loading: false,
+    }),
+
+    methods: {
+      onSubmit () {
+        if (!this.form) return
+
+        this.loading = true
+
+        setTimeout(() => (this.loading = false), 2000)
+      },
+      required (v) {
+        return !!v || 'Field is required'
+      },
+    },
+  }
 </script>
