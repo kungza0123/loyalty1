@@ -1,76 +1,51 @@
 <template>
-  <v-sheet class="bg-deep-purple pa-12" rounded>
-    <v-card class="mx-auto px-6 py-8" >
-      <v-container fluid fill-height>
+<v-app id="inspire">
+    <v-content>
+        <v-container fluid fill-height>
             <v-layout align-center justify-center>
-               <v-flex xs12 sm8 md4>
-      <v-form
-        v-model="form"
-        @submit.prevent="onSubmit"
-      >
-      <v-toolbar dark color="primary">
-      <v-toolbar-title>Login form</v-toolbar-title>
-    </v-toolbar>
-        <v-text-field
-          v-model="email"
-          :readonly="loading"
-          :rules="[required]"
-          class="mb-2"
-          clearable
-          label="Email"
-        ></v-text-field>
-
-        <v-text-field
-          v-model="password"
-          :readonly="loading"
-          :rules="[required]"
-          clearable
-          label="Password"
-          placeholder="Enter your password"
-        ></v-text-field>
-
-        <br>
-
-        <v-btn
-          :disabled="!form"
-          :loading="loading"
-          block
-          color="success"
-          size="large"
-          type="submit"
-          variant="elevated"
-        >
-          Sign In
-        </v-btn>
-        
-      </v-form>
-      </v-flex>
-      </v-layout>
-      </v-container>
-     
-    </v-card>
-  </v-sheet>
+                <v-flex xs12 sm8 md4>
+                    <v-card class="elevation-">
+                        <v-toolbar dark color="primary">
+                            <v-toolbar-title>Login form</v-toolbar-title>
+                        </v-toolbar>
+                        <v-card-text>
+                            <v-form>
+                                <v-text-field  name="login" label="Login" type="text"></v-text-field>
+                                <v-text-field id="password"  name="password" label="Password" type="password"></v-text-field>
+                            </v-form>
+                            <div>Forget <span @click="moveToRegister">Password?</span></div>
+                        </v-card-text>
+                        
+                        
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            
+                            <v-btn color="primary" @click="login">Login</v-btn>
+                      
+                        </v-card-actions>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-content>
+</v-app>
 </template>
+
 <script>
-  export default {
-    data: () => ({
-      form: false,
-      email: null,
-      password: null,
-      loading: false,
-    }),
-
-    methods: {
-      onSubmit () {
-        if (!this.form) return
-
-        this.loading = true
-
-        setTimeout(() => (this.loading = false), 2000)
-      },
-      required (v) {
-        return !!v || 'Field is required'
-      },
+export default {
+    name: 'Login',
+    props: {
+        source: String,
     },
-  }
+    methods: {
+      login(){
+        this.$router.push("/home");
+      },
+      moveToRegister() {
+      this.$router.push("/forgetpassword");
+    },
+    }
+};
 </script>
+
+<style></style>
