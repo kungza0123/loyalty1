@@ -18,7 +18,8 @@
       app
       color="#B22222"
       dark
-      src="https://picsum.photos/1920/1080?random"
+      :src="require('../img/logo1.jpg')"
+      
       fade-img-on-scroll
       shrink-on-scroll
     >
@@ -55,7 +56,7 @@
   export default {
     data() {
       return {
-        drawer: false,
+        drawer: true,
         newsItems: [
           {
             id: 1,
@@ -92,6 +93,9 @@
     background-image: url('./assets/banner.jpg'); */
    
    background-image:url('../img/back.png');
+   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
  /* background-size: 100%;  */
  }
   </style>
