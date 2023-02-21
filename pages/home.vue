@@ -1,5 +1,24 @@
 <template>
-    <v-container fluid>
+  <v-app>
+    <v-app-bar
+      app
+      color="#B22222"
+      dark
+      icon="menu"
+      on-click="openDrawer"
+      src="https://picsum.photos/1920/1080?random"
+      fade-img-on-scroll
+      shrink-on-scroll
+    >
+      <v-app-bar-nav-icon> </v-app-bar-nav-icon>
+      <v-app-bar-title>Title</v-app-bar-title>
+      <v-spacer></v-spacer>
+      
+      
+    </v-app-bar>
+    <v-sheet>
+      <v-container style="height: 1000px">
+        <v-container fluid>
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 lg3 v-for="item in newsItems" :key="item.id">
           <v-card>
@@ -13,7 +32,12 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </template>
+      </v-container>
+    </v-sheet>
+    
+  </v-app>
+</template>
+
   
   <script>
   export default {
