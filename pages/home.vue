@@ -29,7 +29,7 @@
       
     </v-app-bar>
     <v-sheet>
-      <v-container style="height: 1000px">
+      <v-container >
         <v-container fluid>
       <v-layout row wrap>
         <v-flex xs12 sm6 md4 lg3 v-for="item in newsItems" :key="item.id">
@@ -88,8 +88,11 @@
   </script>
   <style>
   main{
-    background-color: #000000;
-    /*background-image: url('./assets/banner.jpg'); */
+    /* background-color: #000000;
+    background-image: url('./assets/banner.jpg'); */
+   
+   background-image:url('../img/back.png');
+ /* background-size: 100%;  */
  }
   </style>
   
