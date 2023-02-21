@@ -6,11 +6,11 @@
                 <v-flex xs12 sm8 md4>
                     <v-card class="elevation-">
                         <v-toolbar dark color="primary">
-                            <v-toolbar-title>Login form</v-toolbar-title>
+                            <v-toolbar-title>Login</v-toolbar-title>
                         </v-toolbar>
                         <v-card-text>
                             <v-form>
-                                <v-text-field  name="login" label="Login" type="text"></v-text-field>
+                                <v-text-field  name="login" label="Email" type="text"></v-text-field>
                                 <v-text-field id="password"  name="password" label="Password" type="password"></v-text-field>
                             </v-form>
                             <div>Forget <span @click="moveToRegister">Password?</span></div>
@@ -48,4 +48,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+main {
+  /* background-color: #000000;
+    background-image: url('./assets/banner.jpg'); */
+
+  background-image: url('../img/back.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: 100%;  */
+}
+</style>
