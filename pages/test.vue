@@ -4,9 +4,11 @@
     </v-overlay>
     <v-navigation-drawer v-model="drawer" app clipped hide-overlay :style="{ top: $vuetify.application.top + 'px', zIndex: 6 }">
       <v-list dense>
+        <v-spacer></v-spacer>
         <v-list-item @click="d">
             News feed
         </v-list-item>
+        <v-spacer></v-spacer>
         <v-list-item @click="f">
             Consign, Reward, Stars point
         </v-list-item>
@@ -42,6 +44,10 @@
 </script>
 
 <style>
+ main{
+    background-color: #000000;
+    /*background-image: url('./assets/banner.jpg'); */
+ }
    
 </style>
 
